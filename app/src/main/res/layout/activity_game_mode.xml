@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".GameMode">
+
+    <GridLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:rowCount="3"
+        android:columnCount = "2">
+
+        <TextView
+            android:id="@+id/GameModeButton"
+            android:layout_rowSpan="3"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="fill"
+            android:background="#2196F3"
+            android:backgroundTint="#2196F3"
+            android:foregroundTint="#00FFFFFF"
+            android:gravity="center"
+            android:text="Game\nMode"
+            android:textSize="80sp"
+            android:layout_row="0"
+            android:layout_column="0" />
+
+        <Button
+            android:id="@+id/ModeButton1"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="fill"
+            android:background="#03A9F4"
+            android:backgroundTint="#204FCE"
+            android:text="Mode1"
+            android:textSize="50sp" />
+
+        <Button
+            android:id="@+id/ModeButton2"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="fill"
+            android:background="#00BCD4"
+            android:backgroundTint="#00BCD4"
+            android:text="Mode2"
+            android:textSize="50sp" />
+        <Button
+            android:id="@+id/ModeButton3"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="fill"
+            android:background="#03A9F4"
+            android:backgroundTint="#204FCE"
+            android:text="Mode3"
+            android:textSize="50sp"
+             />
+
+
+
+    </GridLayout>
+
+</android.support.constraint.ConstraintLayout>

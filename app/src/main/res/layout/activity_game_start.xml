@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".GameStartActivity">
+
+    <GridLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:rowCount="2"
+        android:columnCount = "2">
+
+        <Button
+            android:id="@+id/GameModeButton"
+            android:layout_rowSpan="2"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="fill"
+            android:textSize="50sp"
+            android:background="#2196F3"
+            android:backgroundTint="#2196F3"
+            android:foregroundTint="#00FFFFFF"
+            android:text="Game Mode" />
+
+        <Button
+            android:id="@+id/SettingButton"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="fill"
+            android:background="#03A9F4"
+            android:backgroundTint="#204FCE"
+            android:text="Setting"
+            android:textSize="50sp" />
+
+        <Button
+            android:id="@+id/SettingButton2"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="fill"
+            android:background="#00BCD4"
+            android:backgroundTint="#00BCD4"
+            android:text="Network"
+            android:textSize="50sp" />
+
+
+
+    </GridLayout>
+
+</android.support.constraint.ConstraintLayout>
