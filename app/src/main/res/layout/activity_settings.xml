@@ -25,6 +25,7 @@
             android:textSize="50sp" />
 
         <Switch
+            android:id="@+id/backgroundMusicSetting"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:layout_gravity="fill"
