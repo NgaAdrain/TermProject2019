@@ -30,7 +30,7 @@
             android:layout_gravity="fill"
             android:background="#03A9F4"
             android:backgroundTint="#082A88"
-            android:text="Background Music"
+            android:text="    Background Music"
             android:textColor="#FFFFFF"
             android:textSize="20sp" />
 
@@ -40,7 +40,7 @@
             android:layout_gravity="fill"
             android:background="#00BCD4"
             android:backgroundTint="#A1B9E9"
-            android:text="Effect Sound"
+            android:text="    Effect Sound"
             android:textSize="20sp" />
 
         <Switch
@@ -49,7 +49,7 @@
             android:layout_gravity="fill"
             android:background="#00BCD4"
             android:backgroundTint="#082A87"
-            android:text="Switch3"
+            android:text="    Switch3"
             android:textColor="#FFFFFF"
             android:textSize="20sp" />
 
@@ -59,7 +59,7 @@
             android:layout_gravity="fill"
             android:background="#00BCD4"
             android:backgroundTint="#A0B8E8"
-            android:text="Switch4"
+            android:text="    Switch4"
             android:textSize="20sp" />
 
         <Switch
@@ -68,7 +68,7 @@
             android:layout_gravity="fill"
             android:background="#00BCD4"
             android:backgroundTint="#082A86"
-            android:text="Switch5"
+            android:text="    Switch5"
             android:textColor="#FFFFFF"
             android:textSize="20sp" />
 
