@@ -9,11 +9,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
+        <activity android:name=".Client"></activity>
+        <activity android:name=".Server" />
+        <activity
+            android:name=".socketroom"
+            android:label="@string/title_activity_socketroom"
+            android:theme="@style/NoActionBar" />
+
         <service
             android:name=".BackgroundMusic"
             android:enabled="true"
-            android:exported="true"
-            ></service>
+            android:exported="true" />
 
         <activity
             android:name=".GameMode"

@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Game_0.0.1</string>
+    <string name="title_activity_socketroom">socketroom</string>
 </resources>
