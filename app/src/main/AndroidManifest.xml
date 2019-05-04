@@ -14,6 +14,8 @@
         <activity android:name=".UI.Settings" />
         <activity android:name=".UI.GameStartActivity" />
         <activity android:name=".UI.NetWorkSetting"/>
+        <activity android:name=".Network.Participate"/>
+        <activity android:name=".Network.Create"/>
         <activity android:name=".UI.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

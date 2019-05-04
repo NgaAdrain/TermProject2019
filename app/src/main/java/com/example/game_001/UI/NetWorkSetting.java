@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.game_001.Network.*;
 import com.example.game_001.R;
 
 public class NetWorkSetting extends AppCompatActivity {
@@ -21,12 +22,16 @@ public class NetWorkSetting extends AppCompatActivity {
         Createbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent intent = new Intent(NetWorkSetting.this, Create.class);
+                startActivity(intent);
             }
         });
         Participatebtn = (Button) findViewById(R.id.ParticipateButton);
         Participatebtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent intent = new Intent(NetWorkSetting.this, Participate.class);
+                startActivity(intent);
             }
         });
     }
