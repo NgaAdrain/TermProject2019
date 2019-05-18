@@ -19,7 +19,11 @@ public class MainActivity extends AppCompatActivity {
     public Button startbtn;
     public static Intent musicintent;
     public static final int gameStart = 1001;
-    public static boolean bgmStatus;
+    public static boolean bgmStatus; //save bgm running state.
+    public static boolean connection = false; //connection check;
+    public static boolean serverMode = false; //if server mode : true // client mode : false
+    public static int opposite_Score = 0; //this will use for multi-play //서비스에서 이 변수로 값을 저장하게 하면 됨
+    //public static int my_Score = 0; //this will use for multi-play
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

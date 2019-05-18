@@ -1,8 +1,10 @@
 package com.example.game_001.UI;
 
+import android.Manifest;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
@@ -14,6 +16,11 @@ public class NetWorkSetting extends AppCompatActivity {
     public Button Createbtn;
     public Button Participatebtn;
     protected void onCreate(Bundle savedInstanceState) {
+        int permissionCheck = ContextCompat.checkSelfPermission(this, Manifest.permission.INTERNET);
+//        PERMISSION
+//
+//
+//
         super.onCreate(savedInstanceState);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         setContentView(R.layout.activity_network);
