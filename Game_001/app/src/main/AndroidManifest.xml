@@ -12,9 +12,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
         <receiver
-            android:name=".Services.Client_Receiver"
+            android:name=".Services.Server_Receiver"
             android:enabled="true"
             android:exported="true"></receiver>
+        <receiver
+            android:name=".Services.Client_Receiver"
+            android:enabled="true"
+            android:exported="true" />
 
         <service
             android:name=".Services.ClientService"

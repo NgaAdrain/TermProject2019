@@ -2,6 +2,7 @@ package com.example.game_001.Services;
 
 import android.app.Service;
 import android.content.Intent;
+import android.os.Binder;
 import android.os.Handler;
 import android.os.IBinder;
 import android.os.Message;
@@ -11,6 +12,7 @@ import android.renderscript.ScriptGroup;
 
 import com.example.game_001.UI.MainActivity;
 
+import java.io.BufferedInputStream;
 import java.io.BufferedWriter;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
@@ -21,21 +23,29 @@ import java.io.PrintWriter;
 import java.net.Socket;
 
 public class ClientService extends Service {
-    private final int PORT = 6005;
-    private final String IP = "172.21.10.11";
+    private final int PORT = 50109;
+    private final String IP = "192.168.1.231";
     private Socket socket;
     private DataOutputStream dataout;
     private DataInputStream datain;
     private String sendstr = "";//아마 내가 입력한 text
-    private String showstr = "";
+    private String showstr = null;
     private SocketThread clientThread;
     private GetThread joinThread;
     private SendThread sendThread;
+    private IBinder binder = new LocalBinderC();
 
+    public class LocalBinderC extends Binder {
+        public ClientService getService() { return ClientService.this; }
+    }
 
     @Override
     public IBinder onBind(Intent intent) {
-        return null;
+        return binder;
+    }
+
+    public String toShowmsg(){
+        return showstr;
     }
 /*
     서버 오픈 -> accept대기
@@ -65,13 +75,15 @@ public class ClientService extends Service {
                 if(MainActivity.connection == false) break;
                 //연결된 상태가 아니라는 에러 텍스트 출력
                 sendstr = msg;//text를 받는 부분
+                MainActivity.my_Score = Integer.parseInt(sendstr);
                 //send 버튼이 눌린다면 보낸다음 바로 끄는 방식 or send버튼이 눌리면 send하는 함수가 호출되는 방식
                 sendThread = new SendThread();//join하는 순간 send를 위한 thread를 생성함
                 sendThread.start();//Thread start
-
-
                 break;
             case "quit"://client thread를 종료시킴
+                sendstr = msg;
+                sendThread = new SendThread();//join하는 순간 send를 위한 thread를 생성함
+                sendThread.start();//Thread start
                 if(clientThread != null){//
                     clientThread.close();
                     clientThread = null;
@@ -157,7 +169,7 @@ public class ClientService extends Service {
         private boolean runningStatus = true;
         public GetThread(){
             try {
-                datain = new DataInputStream(socket.getInputStream());
+                datain = new DataInputStream(new BufferedInputStream(socket.getInputStream()));
                 //datainputstream
             } catch (IOException e) {
                 e.printStackTrace();
@@ -167,8 +179,8 @@ public class ClientService extends Service {
         public void run(){
             try {
                 while (runningStatus) {
-                     showstr = datain.readUTF();
-                    //
+                     showstr = datain.readUTF().toString();
+                     MainActivity.opposite_Score = Integer.parseInt(showstr);
                     //implements
                     //receive 구현
                 }
@@ -177,6 +189,11 @@ public class ClientService extends Service {
             }
         }
         public void stopThread(){
+            try {
+                datain.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
             runningStatus = false;
         }
     }
