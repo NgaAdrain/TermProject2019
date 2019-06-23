@@ -29,7 +29,7 @@ import java.net.SocketException;
 import java.net.UnknownHostException;
 
 public class Participate extends AppCompatActivity {
-    private String ip = "223.62.190.143";
+    private String ip = "172.21.8.45";
     private TextView showchatP;
     private EditText editchatP;
     private Button sendBtnP, connectBtnP, quitBtnP, getmsgP;

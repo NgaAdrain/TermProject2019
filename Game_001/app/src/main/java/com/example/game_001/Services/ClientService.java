@@ -24,7 +24,7 @@ import java.net.Socket;
 
 public class ClientService extends Service {
     private final int PORT = 50109;
-    private final String IP = "192.168.1.231";
+    private final String IP = "192.168.0.13";
     private Socket socket;
     private DataOutputStream dataout;
     private DataInputStream datain;
@@ -45,7 +45,7 @@ public class ClientService extends Service {
     }
 
     public String toShowmsg(){
-        return showstr;
+        return showst r;
     }
 /*
     서버 오픈 -> accept대기
